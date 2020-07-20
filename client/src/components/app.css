@@ -1,0 +1,583 @@
+:root {
+    --main-dark-blue-color: #00355F; 
+    --main-light-blue-color: #EDF1ED; 
+    --grey-color: #455560; 
+}
+
+body {
+    margin: 0;
+    background-color: var(--main-light-blue-color); 
+    max-width:100%;
+    font-size: 1.2rem;
+    font-family: 'Century Gothic', Calibri, Arial;
+    line-height:1.5;
+}
+
+.wrapper-box{
+    width: 100vw;
+    max-width:100%;
+    height: fit-content;
+    padding:13vh 0 12vh 0; 
+    display:flex;
+    justify-content: center;
+}
+
+#About{
+  background-color: white;
+}
+
+#About h1, #Skills h1{
+  color: var(--main-dark-blue-color);
+}
+
+#Portfolio, #Contact{
+  background-color: var(--main-dark-blue-color);
+}
+
+#Portfolio h1, #Contact h1{
+  color: white;
+}
+
+#Skills{
+  background-color:var(--main-light-blue-color);
+}
+
+.content{
+    padding: 0;
+    width: 60%;
+    text-align: center;
+}
+
+h1{
+  font-size: 2.2rem;
+}
+
+/* Remove button default style */
+input {
+  -webkit-appearance: none;
+}
+
+/* To prevent zoomin on phone */
+input[type="text"], input[type="email"] {
+  font-size: 16px;
+}
+textarea {
+  font-size: 16px;
+}
+ 
+/* ----------------------------NavBar---------------------------- */
+
+.wrapper-hero{
+    width: 100vw;
+    height: 100vh;
+    max-width:100%;
+    padding-top: 0.2px;
+    background-image: url("./heroimage.jpg");
+    background-color: var(--main-light-blue-color);
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-attachment: fixed ; 
+  
+}
+
+@media screen and (max-width: 1050px) {
+  .wrapper-hero{
+        background-attachment: scroll;
+    }
+}
+ 
+.welcome-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding-top:15vh;
+    height: 60%;
+    font-size: calc(1.7rem + 2.9 * ((100vw - 10rem) / 60));  
+}
+
+nav ul {
+    width: 100%;
+    margin: 0 ;
+    padding: 0 2vw;
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    overflow: hidden;
+    right: 0; 
+    position: fixed; 
+    z-index: 100;
+    line-height: 1.8;
+    top:0;
+}
+ 
+ .nav-item-left{  
+  padding: 0.7vh 1vw;
+  position: fixed;
+  left:0;
+  color:white;
+  font-size: 1.4rem; 
+  cursor: pointer;
+ }
+
+.nav-item{
+  color:white;
+  font-size: 1.4rem; 
+}
+ 
+.nav-item a{
+  cursor: pointer;
+  padding: 0.7vh 1vw;
+  display: block;
+}
+ 
+.active-nav{
+  background-color:var(--main-dark-blue-color);
+  text-decoration: underline;
+  text-decoration-color: white;
+  border-radius: 20px 20px 0 0;
+}
+  
+
+/* ----------------------------End NavBar--------------------------- */
+
+/* ----------------------------Portfolio---------------------------- */
+.portfolio-box-container{
+  max-width:100%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    padding: 5px;
+}
+
+.box {
+  width: 30%;
+  border-radius:20px;
+  margin:5px;
+  min-width:280px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.box-img{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  max-width:100%;
+}
+
+.overlay{
+  position: absolute;
+  border-radius:20px;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color:var(--main-light-blue-color); 
+  color: black;
+  line-height: 1.2;
+  opacity: 0;
+  transition: .45s ease-in-out;
+  -webkit-transition: .45s ease-in-out;
+  -moz-transition: .45s ease-in-out;
+}
+
+.box:hover .overlay{
+  opacity: 1.0; 
+}
+.ReactModal__Body--open {
+  overflow-y: hidden;
+}
+ .portfolio-button{
+  background-color:var(--main-dark-blue-color); 
+  border-radius:28px;
+  font-size: 1rem;
+	cursor:pointer;
+  color:white;
+  padding:7px 10px;
+  border: none;
+  outline: none;
+  margin: 0 70px;
+}
+
+.portfolio-button:hover{
+  background-color:#0b5491;
+}
+
+.Modal {
+  position: absolute;
+  top: 20vh;
+  left: 15vw;
+  right: 15vw;
+  bottom: 20vh;
+  background-color:  var(--main-light-blue-color); 
+  outline:none; 
+  padding:2%;
+  height: fit-content;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.overlay-modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:#455560d8;
+}
+
+.Modal h3{
+  text-align:  center;
+  font-size: 1.5rem;
+}
+
+.Modal h5{
+  color: var(--main-dark-blue-color); 
+  margin: 0;
+}
+
+.Modal span{
+  font-weight: normal;
+  color:black;
+}
+
+.Modal a, .Modal  a:hover{
+  color:var(--grey-color);
+}
+
+.modal-content , .modal-content h5{
+  font-size:calc(0.9rem + 0.4 * ((100vw - 18.75rem) / (100 - 18.75))); 
+}
+
+.modal-explaining{
+  text-align: center;
+}
+
+.modal-explaining img{
+  max-width: 90%;
+}
+  
+/* ------------------------ End Portfolio ------------------------ */
+
+
+/* --------------------------- Skills ---------------------------- */
+.skills-row{
+    display: flex;
+    flex-Wrap: wrap;
+    align-Items: center;
+    justify-content: space-evenly;
+  }
+
+.skills-title{
+    margin: 0;
+    line-height: 1.3;
+}
+
+.skills-container{
+    width:120px;
+    height:120px;  
+    display:flex;
+    align-items:  center;
+    flex-direction:column;
+    flex: 0 0 33.333333%;
+    justify-content:center;
+    padding: 20px 0px;
+}
+
+/* ------------------------- End Skills --------------------------- */
+
+/* --------------------------- Contact ---------------------------- */
+
+.contact-title{
+  line-height: 0;
+}
+
+.paragraph-contact{
+  font-size:calc(0.8rem + 0.4 * ((100vw - 18.75rem) / (100 - 18.75)));   /* calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width]))); */
+  width: 80%;
+  margin: 0 auto;
+  color:white;
+  padding-bottom: 0;
+  display: inline-block;
+}
+
+.paragraph-sent{
+  font-size:calc(0.8rem + 0.4 * ((100vw - 18.75rem) / (100 - 18.75)));   
+  margin: 0 auto;
+  color:white;
+  padding-bottom: 0;
+   display: inline-block;
+}
+
+form{
+  overflow:hidden; 
+  width:80%;
+  margin:0 auto;
+  padding:5px 15px;
+  color:white;
+}
+ 
+.label-form{
+ display:block;
+ width:100%;
+ text-align: left;
+ margin:0 auto;
+ line-height: 1.5;
+}
+
+.inputBox{
+  display:block;
+  width:100%;
+  margin:0 auto;
+  height:40px;
+  border-radius:10px;
+  border:1px grey solid;
+  margin-bottom:20px;
+  outline:none
+}
+
+.textarea-box{
+  display:block;
+  width:100%;
+  margin:0 auto;
+  border-radius:10px;
+  border:1px grey solid;
+  margin-bottom:2px;
+  outline:none;
+}
+
+.btn-contact{
+  display:block;
+  width:100%;
+  margin:20px auto;
+  height:40px;
+  border-radius:10px;
+  background-color:var(--grey-color);
+  color:white;
+  font-size: 1rem;
+  cursor:pointer;
+  border:none;
+  outline:none;
+}
+
+.required{
+  color:grey;
+  font-size: 0.7rem;
+  display: inline-block;
+  margin-top: 5px;
+  vertical-align:top;
+}
+
+.error-box{
+  margin-bottom: 2px;
+  border:1.5px red solid;
+}
+
+.error-text {
+  color:red; 
+  display: block;
+  text-align: left;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+} 
+
+/* ------------------------- End Contact -------------------------- */
+
+/* --------------------------- Footer ----------------------------- */
+
+footer{
+    background-color: var(--grey-color); 
+    text-align: center;
+    color:white;
+    padding:2vh 0;
+}
+
+footer a, a:hover, a:focus{
+  color:white;
+}
+
+.footer-icon{
+  padding: 0 0.2vw;
+}
+
+.tooltip {
+  position: relative;
+  cursor: pointer;
+}
+
+.tooltip-box {
+  min-width: 150px;
+  position: absolute;
+  bottom: 50%;
+  left: 40%;
+  transform: translateX(-100%);
+}
+
+.tooltip-text{
+  background-color: var(--main-light-blue-color);
+  border-radius: 10px;
+  color:var(--main-dark-blue-color);
+  font-size: .75rem;
+  font-weight: bold;
+  line-height: 1.4;
+  padding: .75em;
+  cursor: default;
+}
+
+.tooltip-text a {
+  color:var(--grey-color);
+}
+
+.secondline-footer{
+  font-size: 1rem;
+}
+
+/* ------------------------- End Footer -------------------------- */
+
+
+/* ------------------------- Responsive --------------------------- */
+
+.icon-bars{
+  display:none;
+}
+
+.icon-bars span{
+  cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+
+  .nav-item:not(:first-child){
+    display: none;
+  }
+
+  .icon-bars {
+    float: right;
+    display: block;
+  }
+
+  ul.topnav.responsive .nav-item-left{
+    display: none;
+  }
+
+  nav ul.responsive{
+    padding:0px;
+    text-align: right;
+    flex-direction: column;
+    background:var(--grey-color); 
+    transition: 0.5s;
+  }
+ 
+  .topnav.responsive li{
+    display: block;
+     padding-right: 2vw;
+  }
+
+  .topnav.responsive li:hover:not(:first-child) { 
+    background-color: var(--main-dark-blue-color); 
+  }
+  
+ .active-nav{
+    background-color: transparent;
+    text-decoration: none;
+  }
+}
+ 
+
+@media screen and (max-width: 510px) {
+
+  ul.topnav.responsive {
+    padding-bottom: 100%;
+    background-color:#455560d8;
+    transition: 0.5s;
+  }
+
+  ul.topnav.responsive li:not(:first-child){
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 2em;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+  .nav-item-left,.icon-bars{
+    color: grey; 
+  }
+  ul.topnav.responsive .icon-bars{
+    border-bottom: 1px solid white;
+  }
+
+  ul.topnav.responsive .nav-item-left{
+    display: none;
+  }
+}
+ 
+
+@media screen and (max-width: 1000px) {
+  .content{
+    width: 80%;
+  }
+}
+
+/* ------------------------End Responsive-------------------------- */
+
+/* --------------------------Scrollbar----------------------------- */
+
+/* The emerging W3C standard
+   that is currently Firefox-only */
+   * { 
+    scrollbar-color: var(--grey-color) white;
+  }
+  
+  /* Works on Chrome/Edge/Safari */
+  *::-webkit-scrollbar {
+    width: 14px;
+  }
+  *::-webkit-scrollbar-track {
+    background: white;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--grey-color);
+    border-radius: 20px;
+    border: 2px solid white;
+  }
+ 
+/* ------------------------Page Loader--------------------------- */
+  .loader {
+    position: absolute;
+    top: calc(50% - 3em);
+    left: calc(50% - 3em);
+    width: 4em;
+    height: 4em;
+    border: 0.8em solid var(--grey-color);
+    border-top: 0.8em solid var(--main-dark-blue-color);
+    border-radius: 50%;
+    animation: loading 1.1s infinite linear;
+    transition: opacity 0.3s;
+  }
+  
+  .loader--hide {
+    opacity: 0;
+  }
+  
+  @keyframes loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
+  
